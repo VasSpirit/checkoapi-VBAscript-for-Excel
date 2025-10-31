@@ -27,7 +27,7 @@ Sub GetContactsForMultipleOGRN()
         End If
         
         ' Формируем URL запроса
-        url = "https://api.checko.ru/v2/company?key=bAZFhTGTTO1f8TZg&ogrn=" & ogrn
+        url = "https://api.checko.ru/v2/company?key=ВАШ_API_КЛЮЧg&ogrn=" & ogrn
         
         ' Выполняем запрос
         On Error Resume Next
