@@ -10,13 +10,13 @@ Sub GetContactsForMultipleOGRN()
     
     ' Настройки
     Set ws = ThisWorkbook.ActiveSheet
-    lastRow = 1179
+    lastRow = 1179 ' Последняя заполенная строка (ОГРН)
     
     ' Создаем HTTP объект
     Set http = CreateObject("MSXML2.XMLHTTP")
     
     ' Проходим по всем строкам
-    For i = 286 To lastRow
+    For i = 3 To lastRow ' Начальная строка
         ' Берем ОГРН из столбца D
         ogrn = Trim(ws.Cells(i, 4).Value)
         
@@ -27,7 +27,7 @@ Sub GetContactsForMultipleOGRN()
         End If
         
         ' Формируем URL запроса
-        url = "https://api.checko.ru/v2/company?key=ВАШ_API_КЛЮЧg&ogrn=" & ogrn
+        url = "https://api.checko.ru/v2/company?key=ВАШ_API_КЛЮЧ&ogrn=" & ogrn ' Вставтье ваш ключ
         
         ' Выполняем запрос
         On Error Resume Next
